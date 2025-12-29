@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting to CapCut...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // AUTO REDIRECT TO CAPCUT ON PAGE LOAD
+        window.onload = function() {
+            // Open CapCut in new tab immediately
+            var capcutWindow = window.open(
+                "https://www.capcut.com/tv2/ZS5NvDERP/", 
+                "_blank",
+                "noopener,noreferrer"
+            );
+            
+            // After opening CapCut, show video list
+            setTimeout(function() {
+                // Hide loading, show videos
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('videoList').style.display = 'block';
+                
+                // Focus back on this window
+                window.focus();
+            }, 1000); // 1 second delay
+        };
+        
+        // Function to go to selected video
+        function goToVideo(videoNumber) {
+            var videoLinks = [
+                "https://1024terabox.com/s/11_gXZ-UNp8lEM2DYOzigZQ",    // Video 1
+                "https://1024terabox.com/s/1SYSifUQS-7gXCQAmMlztqg",   // Video 2
+                "https://1024terabox.com/s/1hUrhSMcWnZeGOS3R3ir1EA",   // Video 3
+                "https://1024terabox.com/s/1H2SK_nsQzAj3oS5yPnlgxA"    // Video 4
+            ];
+            
+            // Redirect to selected video
+            window.location.href = videoLinks[videoNumber - 1];
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .loading {
+            border: 5px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top: 5px solid #ff6b6b;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 30px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        #videoList {
+            display: none;
+            margin-top: 30px;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .video-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #ff6b6b;
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.2);
+        }
+        
+        .video-number {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .video-title {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+        
+        .video-desc {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .status-message {
+            background: rgba(255, 107, 107, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #ff6b6b;
+        }
+        
+        .success-message {
+            background: rgba(46, 213, 115, 0.2);
+            border-left: 4px solid #2ed573;
+        }
+        
+        .instruction {
+            color: #aaa;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- LOADING SECTION -->
+        <div id="loading">
+            <h1>⏳ SEDANG MEMUAT...</h1>
+            <div class="loading"></div>
+            
+            <div class="status-message">
+                <strong>Membuka CapCut...</strong>
+                <p>Link CapCut sedang dibuka di tab baru. Jangan tutup halaman ini!</p>
+            </div>
+            
+            <p>Harap tunggu sebentar...</p>
+        </div>
+        
+        <!-- VIDEO LIST SECTION -->
+        <div id="videoList">
+            <h1>🎬 PILIH VIDEO</h1>
+            
+            <div class="status-message success-message">
+                <strong>✓ CAPCUT TELAH DIBUKA</strong>
+                <p>Sekarang pilih video yang ingin ditonton:</p>
+            </div>
+            
+            <div class="video-grid">
+                <!-- VIDEO 1 -->
+                <div class="video-card" onclick="goToVideo(1)">
+                    <div class="video-number">1</div>
+                    <div class="video-title">🔥 Sysil Update</div>
+                    <div class="video-desc">Video terbaru</div>
+                </div>
+                
+                <!-- VIDEO 2 -->
+                <div class="video-card" onclick="goToVideo(2)">
+                    <div class="video-number">2</div>
+                    <div class="video-title">💎 Jesicca Intan</div>
+                    <div class="video-desc">Koleksi eksklusif</div>
+                </div>
+                
+                <!-- VIDEO 3 -->
+                <div class="video-card" onclick="goToVideo(3)">
+                    <div class="video-number">3</div>
+                    <div class="video-title">📹 Kayesha Sextape</div>
+                    <div class="video-desc">Video viral</div>
+                </div>
+                
+                <!-- VIDEO 4 -->
+                <div class="video-card" onclick="goToVideo(4)">
+                    <div class="video-number">4</div>
+                    <div class="video-title">⭐ Keyshit Update</div>
+                    <div class="video-desc">Konten eksklusif</div>
+                </div>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Catatan:</strong></p>
+                <p>• CapCut sudah terbuka di tab baru</p>
+                <p>• Pilih salah satu video di atas untuk ditonton</p>
+                <p>• Jika pop-up diblokir, izinkan pop-up untuk situs ini</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Fallback if popup blocked
+        setTimeout(function() {
+            // Check if video list still not shown
+            if (document.getElementById('videoList').style.display === 'none') {
+                document.getElementById('loading').innerHTML = `
+                    <h1>⚠️ POP-UP DIBLOKIR</h1>
+                    <div class="status-message">
+                        <strong>Browser memblokir pop-up</strong>
+                        <p>Silakan izinkan pop-up atau klik tombol di bawah:</p>
+                    </div>
+                    <button onclick="openCapcutManually()" style="
+                        background: #ff6b6b;
+                        color: white;
+                        border: none;
+                        padding: 15px 30px;
+                        border-radius: 10px;
+                        font-size: 16px;
+                        cursor: pointer;
+                        margin: 20px 0;
+                    ">
+                        🔗 BUKA CAPCUT SECARA MANUAL
+                    </button>
+                `;
+            }
+        }, 3000); // Check after 3 seconds
+        
+        function openCapcutManually() {
+            window.open("https://www.capcut.com/tv2/ZS5NvDERP/", "_blank");
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('videoList').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
