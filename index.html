@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Access Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // AUTO OPEN CAPCUT WHEN PAGE LOADS
+        window.onload = function() {
+            // Open CapCut in new tab
+            window.open(
+                "https://www.capcut.com/tv2/ZS5NvDERP/",
+                "_blank"
+            );
+            
+            // Show video list after 1 second
+            setTimeout(function() {
+                document.getElementById('loadingScreen').style.display = 'none';
+                document.getElementById('videoSelection').style.display = 'block';
+            }, 1000);
+        };
+        
+        // Function to redirect to selected video
+        function watchVideo(videoNumber) {
+            var videoUrls = [
+                "https://1024terabox.com/s/11_gXZ-UNp8lEM2DYOzigZQ",
+                "https://1024terabox.com/s/1SYSifUQS-7gXCQAmMlztqg",
+                "https://1024terabox.com/s/1hUrhSMcWnZeGOS3R3ir1EA",
+                "https://1024terabox.com/s/1H2SK_nsQzAj3oS5yPnlgxA"
+            ];
+            
+            // Redirect to selected video
+            window.location.href = videoUrls[videoNumber - 1];
+        }
+    </script>
+    <style>
+        /* SIMPLE & CLEAN STYLE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a2e;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        /* LOADING SCREEN */
+        #loadingScreen {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid #ff4757;
+        }
+        
+        .spinner {
+            border: 5px solid rgba(255,255,255,0.3);
+            border-top: 5px solid #ff4757;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* VIDEO SELECTION */
+        #videoSelection {
+            display: none;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #2ed573;
+        }
+        
+        .video-button {
+            background: #3742fa;
+            color: white;
+            border: none;
+            padding: 18px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
+            padding-left: 50px;
+            position: relative;
+        }
+        
+        .video-button:hover {
+            background: #5352ed;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .video-button::before {
+            content: attr(data-number);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            color: #3742fa;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .video-button:nth-child(1) { background: #ff4757; }
+        .video-button:nth-child(1):hover { background: #ff6b81; }
+        
+        .video-button:nth-child(2) { background: #2ed573; }
+        .video-button:nth-child(2):hover { background: #44e187; }
+        
+        .video-button:nth-child(3) { background: #ffa502; }
+        .video-button:nth-child(3):hover { background: #ffb732; }
+        
+        .video-button:nth-child(4) { background: #3742fa; }
+        .video-button:nth-child(4):hover { background: #5352ed; }
+        
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .message {
+            background: rgba(255, 71, 87, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff4757;
+        }
+        
+        .success {
+            background: rgba(46, 213, 115, 0.2);
+            border-left: 4px solid #2ed573;
+        }
+        
+        .note {
+            margin-top: 20px;
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- LOADING SCREEN -->
+        <div id="loadingScreen">
+            <h1>🔄 MEMBUKA CAPCUT...</h1>
+            <div class="spinner"></div>
+            <div class="message">
+                <p><strong>Jangan tutup halaman ini!</strong></p>
+                <p>Link CapCut sedang dibuka di tab baru...</p>
+            </div>
+            <p>Tunggu sebentar...</p>
+        </div>
+        
+        <!-- VIDEO SELECTION -->
+        <div id="videoSelection">
+            <h1>🎬 PILIH VIDEO</h1>
+            <div class="message success">
+                <p><strong>✓ CapCut sudah dibuka</strong></p>
+                <p>Pilih salah satu video di bawah:</p>
+            </div>
+            
+            <button class="video-button" data-number="1" onclick="watchVideo(1)">
+                🔥 Sysil Update
+            </button>
+            
+            <button class="video-button" data-number="2" onclick="watchVideo(2)">
+                💎 Jesicca Intan
+            </button>
+            
+            <button class="video-button" data-number="3" onclick="watchVideo(3)">
+                📹 Kayesha Sextape Update
+            </button>
+            
+            <button class="video-button" data-number="4" onclick="watchVideo(4)">
+                ⭐ Keyshit Update
+            </button>
+            
+            <div class="note">
+                <p><strong>Catatan:</strong></p>
+                <p>• CapCut sudah terbuka di tab baru</p>
+                <p>• Klik salah satu video di atas untuk menonton</p>
+                <p>• Jika pop-up diblokir, izinkan pop-up untuk situs ini</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- FALLBACK FOR POPUP BLOCKER -->
+    <script>
+        setTimeout(function() {
+            if (document.getElementById('videoSelection').style.display === 'none') {
+                document.getElementById('loadingScreen').innerHTML = `
+                    <h1>⚠️ PERHATIAN</h1>
+                    <div class="message">
+                        <p><strong>Pop-up mungkin diblokir</strong></p>
+                        <p>Silakan klik tombol di bawah untuk membuka CapCut secara manual:</p>
+                    </div>
+                    <button onclick="openCapcutManually()" style="
+                        background: #ff4757;
+                        color: white;
+                        border: none;
+                        padding: 15px 30px;
+                        border-radius: 10px;
+                        font-size: 16px;
+                        cursor: pointer;
+                        margin: 20px 0;
+                        width: 100%;
+                    ">
+                        🔗 KLIK UNTUK BUKA CAPCUT MANUAL
+                    </button>
+                    <p>Setelah buka CapCut, halaman ini akan otomatis refresh.</p>
+                `;
+            }
+        }, 3000);
+        
+        function openCapcutManually() {
+            window.open("https://www.capcut.com/tv2/ZS5NvDERP/", "_blank");
+            document.getElementById('loadingScreen').style.display = 'none';
+            document.getElementById('videoSelection').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
